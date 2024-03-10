@@ -8,6 +8,7 @@ ARG PACKAGES="libc6-compat gcompat curl git xsel ipython py3-pynvim ripgrep fzf 
 RUN apk update && \
     apk upgrade && \
     apk add $PACKAGES && \
+    export TMUX_PLUGIN_MANAGER_PATH="~/.tmux/plugins" && \
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm > /dev/null 2>&1 && \
     ~/.tmux/plugins/tpm/scripts/install_plugins.sh
 
