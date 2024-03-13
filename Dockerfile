@@ -4,7 +4,7 @@ LABEL com.github.containers.toolbox="true" \
     usage="Image for distrobox" \
     summary="Development environment base"
 
-ARG PACKAGES="libc6-compat gcompat curl git xsel ipython py3-pynvim ripgrep fzf neovim tmux exa"
+ARG PACKAGES="libc6-compat gcompat curl git xsel py3-pynvim ripgrep fzf neovim tmux exa"
 RUN apk update && \
     apk upgrade && \
     apk add $PACKAGES && \
