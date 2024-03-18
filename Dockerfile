@@ -10,10 +10,11 @@ RUN apk update && \
     apk upgrade && \
     apk add $PACKAGES
 
-USER 1000
-RUN export TMUX_PLUGIN_MANAGER_PATH="~/.tmux/plugins" && \
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && \
-    ~/.tmux/plugins/tpm/scripts/install_plugins.sh && \
-    mkdir -p ~/.local/bin && \
-    curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/.local/bin
+RUN apk update && \
+    apk upgrade && \
+    mkdir -p /tmux/plugins && \
+    export TMUX_PLUGIN_MANAGER_PATH="/tmux/plugins" && \
+    git clone https://github.com/tmux-plugins/tpm /tmux/plugins/tpm && \
+    /tmux/plugins/tpm/scripts/install_plugins.sh && \
+    curl -s https://ohmyposh.dev/install.sh | bash -s -- -d /usr/local/bin
 
