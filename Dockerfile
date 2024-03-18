@@ -11,9 +11,7 @@ RUN apk update && \
     apk add $PACKAGES
 
 USER 1000
-RUN apk update && \
-    apk upgrade && \
-    export TMUX_PLUGIN_MANAGER_PATH="~/.tmux/plugins" && \
+RUN export TMUX_PLUGIN_MANAGER_PATH="~/.tmux/plugins" && \
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && \
     ~/.tmux/plugins/tpm/scripts/install_plugins.sh && \
     mkdir -p ~/.local/bin && \
