@@ -1,2 +1,2 @@
 # devbox
-Base for my developer environments
+Base for my distrobox developer environments
